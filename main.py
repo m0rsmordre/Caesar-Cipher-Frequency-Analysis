@@ -30,7 +30,6 @@ def difference(t):
     return sum([abs(counter.get(letter,0) * 100 / len(t) - FREQ[letter]) for letter in alf ])
 
 def break_cipher(msg):
-    lowest_dif = 99999
     enc_key = 0
     a = [difference(decrypt(msg,x)) for x in range(1,len(alf))]
     return a.index(min(a))+1
